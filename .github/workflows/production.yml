@@ -49,14 +49,14 @@ jobs:
         uses: actions/setup-node@v3
         with:
           always-auth: true
-          scope: '@gabruw'
+          scope: '@rango-team'
           node-version: '${{ matrix.node-version }}'
           registry-url: 'https://npm.pkg.github.com/'
 
       - name: Create .npmrc
         uses: ferluisxd/create-npmrc@3
         with:
-          org_name: gabruw
+          org_name: rango-team
         env:
           AUTH_TOKEN: ${{ secrets.RANGO_NPM_AUTH_TOKEN }}
 
