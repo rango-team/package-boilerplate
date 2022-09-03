@@ -7,10 +7,10 @@ echo "";
 
 echo "1 - 💅💅💅 It's time to format you code!";
 
-yarn format ||
+npm run format ||
 (
     echo "🤢🤮🤢🤮 It's FU**ING RAW!!! Your styling looks disgusting 🤢🤮🤢🤮";
-    echo "Format failed, run 'yarn format' to try again";
+    echo "Format failed, run 'npm run format' to try again";
 
     false;
 )
@@ -21,10 +21,10 @@ echo "|-------------------------------------------------------------------------
 echo "";
 echo "2 - 🏗️🔨👷 I called Bob to help us, because it's time to build!";
 
-yarn build ||
+npm run build ||
 (
     echo "❌👷🔨❌ Glad Bob is here... ❌👷🔨❌";
-    echo "Build failed, run 'yarn build' to try again";
+    echo "Build failed, run 'npm run build' to try again";
 
     false;
 )

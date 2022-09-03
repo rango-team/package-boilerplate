@@ -7,10 +7,10 @@ echo "";
 
 echo "1 - 💅👀🤌 It's time to check the format of your code!";
 
-yarn check-format ||
+npm run check-format ||
 (
     echo "🥴😵‍💫🥴😵‍💫 So you're someone who likes to mess things up right? 🥴😵‍💫🥴😵‍💫";
-    echo "Check Format failed, run 'yarn check-format' to try again";
+    echo "Check Format failed, run 'npm run check-format' to try again";
 
     false;
 )
@@ -21,10 +21,10 @@ echo "|-------------------------------------------------------------------------
 echo "";
 echo "2 - 📖👀🤌 I called Phoenix Wright to check the rules, it's time to check the lint!";
 
-yarn check-lint ||
+npm run check-lint ||
 (
     echo "😤🏀👋😤 Get that weak s**t out of here! 😤🏀👋😤";
-    echo "ESLint Check failed, run 'yarn check-lint' to try again";
+    echo "ESLint Check failed, run 'npm run check-lint' to try again";
 
     false;
 )
@@ -35,10 +35,10 @@ echo "|-------------------------------------------------------------------------
 echo "";
 echo "3 - 🪧👀🤌 I'm not your type? Well, it's time to check the types!";
 
-yarn check-types ||
+npm run check-types ||
 (
     echo "🤡😂❌🤡 You're not dumb, you're just... hmmm... quirky right? 🤡😂❌🤡";
-    echo "Types Check failed, run 'yarn check-types' to try again";
+    echo "Types Check failed, run 'npm run check-types' to try again";
 
     false;
 )
