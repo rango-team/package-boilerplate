@@ -4,7 +4,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/rango-team/pkg-boilerplate">
+  <a href="https://github.com/rango-team/package-boilerplate">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvZki1EoCKV8aavs6hmPzqmnWUg-USH2qEiZSIhr3f6pa92z1DujPF10BHO8fXBI25zFY&usqp=CAU" alt="Logo" width="200" height="200">
   </a>
 

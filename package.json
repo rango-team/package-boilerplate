@@ -1,5 +1,5 @@
 {
-    "name": "@rango-team/pkg-boilerplate",
+    "name": "@rango-team/package-boilerplate",
     "version": "0.0.1",
     "description": "The boilerplate for package creation",
     "keywords": [],
@@ -13,7 +13,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/rango-team/pkg-boilerplate"
+        "url": "https://github.com/rango-team/package-boilerplate"
     },
     "scripts": {
         "build": "rm -rf dist && tsc -p .",
