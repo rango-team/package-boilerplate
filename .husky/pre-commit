@@ -15,10 +15,13 @@ npm run format ||
     false;
 )
 
+echo "";
 echo "🤔🤔🤔... Alright... Your code looks good to me, I'll try to build now";
+
 echo "";
 echo "|-------------------------------------------------------------------------|";
 echo "";
+
 echo "2 - 🏗️🔨👷 I called Bob to help us, because it's time to build!";
 
 npm run build ||
@@ -29,10 +32,13 @@ npm run build ||
     false;
 )
 
+echo "";
 echo "🤔🤔🤔... Great... Your code was builded, I'll package all for you";
+
 echo "";
 echo "|-------------------------------------------------------------------------|";
 echo "";
+
 echo "3 - 📦📦📦 Can a dog pack something? Well, it's time to pack!";
 
 git add dist/* ||
@@ -43,4 +49,6 @@ git add dist/* ||
     false;
 )
 
+echo "";
 echo "🎉🎉🎉 Well... you win this time... I'm committing this now!!! 🎉🎉🎉";
+echo "";

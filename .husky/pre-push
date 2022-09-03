@@ -15,10 +15,13 @@ npm run check-format ||
     false;
 )
 
+echo "";
 echo "🤔🤔🤔... Right... Right... Congratulations on the minimum";
+
 echo "";
 echo "|-------------------------------------------------------------------------|";
 echo "";
+
 echo "2 - 📖👀🤌 I called Phoenix Wright to check the rules, it's time to check the lint!";
 
 npm run check-lint ||
@@ -29,11 +32,15 @@ npm run check-lint ||
     false;
 )
 
+echo "";
 echo "🤔🤔🤔... So your code looks great? Let's see if anyone learned OO";
+
 echo "";
 echo "|-------------------------------------------------------------------------|";
 echo "";
+
 echo "3 - 🪧👀🤌 I'm not your type? Well, it's time to check the types!";
+echo ""
 
 npm run check-types ||
 (
@@ -43,4 +50,6 @@ npm run check-types ||
     false;
 )
 
+echo "";
 echo "🥳🥳🥳 Your effort brought you this far, It's push time!!! 🥳🥳🥳";
+echo "";
