@@ -16,13 +16,12 @@
         "url": "https://github.com/rango-team/pkg-boilerplate"
     },
     "scripts": {
-        "prepare": "husky install",
         "build": "rm -rf dist && tsc -p .",
         "format": "prettier src --write .",
         "check-lint": "eslint src --ext ts",
         "check-types": "tsc --pretty --noEmit",
         "check-format": "prettier src --check .",
-        "clean": "rm -rf node_modules && yarn install"
+        "clean": "rm -rf node_modules && npm install"
     },
     "dependencies": {},
     "devDependencies": {
