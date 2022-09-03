@@ -1,0 +1,32 @@
+# macOS
+.DS_Store*
+Icon?
+._*
+
+# windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# linux
+.directory
+*~
+
+# environment
+.env*
+
+# npm/yarn
+*.lock
+npm-debug.*
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-log.json
+
+# jest
+.jest
+
+# stryker
+reports
+.stryker-tmp
