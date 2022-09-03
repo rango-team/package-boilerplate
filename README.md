@@ -24,7 +24,7 @@ You will find a clean project to evolve as you want with basic libs, recommended
 ### ⚙ First-class Support
 
 [![Visual Studio Code][vscode]][vscode-url]
-[![Yarn][yarn]][yarn-url]
+[![NPM][npm]][npm-url]
 
 ### 💾 Technologies
 
@@ -36,7 +36,7 @@ You will find a clean project to evolve as you want with basic libs, recommended
 You will need to have the following softwares installed already:
 
 [![Node.js version][node.js-version]][node.js-installation]
-[![Yarn version][yarn-version]][yarn-installation]
+[![NPM version][npm-version]][npm-installation]
 
 > If you don't have the softwares installed, click on the badges to be redirected to the installation tutorial.
 
@@ -79,7 +79,7 @@ It will remove the existent `dist` folder and create another one with updated co
 -   [x] Typescript
 -   [x] Github Actions
 -   [x] Editor Config
--   [x] VS code extensions
+-   [x] VS code workspace
 
 ## 📑 License
 
@@ -114,12 +114,12 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [node.js-version]: https://shields.io/badge/node->=14-43853D?logo=node.js&style=for-the-badge&logoColor=white
 [node.js-installation]: https://nodejs.dev/en/learn/how-to-install-nodejs
 
-<!-- BADGE - Yarn -->
+<!-- BADGE - NPM -->
 
-[yarn]: https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white
-[yarn-url]: https://yarnpkg.com/
-[yarn-version]: https://shields.io/badge/yarn->=1.10-%232C8EBB?logo=yarn&style=for-the-badge&logoColor=white
-[yarn-installation]: https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable
+[npm]: https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white
+[npm-url]: https://www.npmjs.com/
+[npm-version]: https://shields.io/badge/yarn->=7.20-%23000000?logo=npm&style=for-the-badge&logoColor=white
+[npm-installation]: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
 <!-- BADGE - VS Code -->
 
