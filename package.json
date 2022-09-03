@@ -1,0 +1,39 @@
+{
+    "name": "@rango-team/pkg-boilerplate",
+    "version": "0.0.1",
+    "description": "The boilerplate for package creation",
+    "keywords": [],
+    "author": "Rango",
+    "license": "MIT",
+    "type": "commonjs",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/@rango-team"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rango-team/pkg-boilerplate"
+    },
+    "scripts": {
+        "prepare": "husky install",
+        "build": "rm -rf dist && tsc -p .",
+        "format": "prettier src --write .",
+        "check-lint": "eslint src --ext ts",
+        "check-types": "tsc --pretty --noEmit",
+        "check-format": "prettier src --check .",
+        "clean": "rm -rf node_modules && yarn install"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@types/node": "^18.7.14",
+        "@typescript-eslint/eslint-plugin": "^5.36.1",
+        "@typescript-eslint/parser": "^5.36.1",
+        "eslint": "^8.23.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "husky": "^8.0.1",
+        "prettier": "^2.7.1",
+        "typescript": "^4.8.2"
+    }
+}
