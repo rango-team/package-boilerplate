@@ -26,8 +26,18 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: https://npm.pkg.github.com/
 
+      - name: Create .npmrc
+        uses: ferluisxd/create-npmrc@3
+        with:
+          org_name: rango-team
+        env:
+          AUTH_TOKEN: ${{ secrets.RANGO_NPM_AUTH_TOKEN }}
+
+      - name: Override "prepare" script
+        run: npm set-script prepare ""
+
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps --registry=https://registry.npmjs.org/
 
       - name: Build
         run: npm run build --if-present
@@ -52,13 +62,6 @@ jobs:
           scope: '@rango-team'
           node-version: ${{ matrix.node-version }}
           registry-url: https://npm.pkg.github.com/
-
-      - name: Create .npmrc
-        uses: ferluisxd/create-npmrc@3
-        with:
-          org_name: rango-team
-        env:
-          AUTH_TOKEN: ${{ secrets.RANGO_NPM_AUTH_TOKEN }}
 
       - name: Publish package
         run: npm publish
