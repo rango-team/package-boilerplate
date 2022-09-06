@@ -1,7 +1,7 @@
 {
     "name": "@rango-team/package-boilerplate",
-    "version": "0.0.1",
-    "description": "The boilerplate for package creation",
+    "version": "0.0.2",
+    "description": "The boilerplate for package creation with jest and stryker",
     "keywords": [],
     "author": "Rango",
     "license": "MIT",
@@ -22,9 +22,14 @@
         "check-lint": "eslint src --ext ts",
         "check-types": "tsc --pretty --noEmit",
         "check-format": "prettier src --check .",
-        "clean": "rm -rf node_modules && npm install"
+        "clean": "rm -rf node_modules && npm install",
+        "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
     },
     "devDependencies": {
+        "@stryker-mutator/core": "^6.2.2",
+        "@stryker-mutator/jest-runner": "^6.2.2",
+        "@stryker-mutator/typescript-checker": "^6.2.2",
+        "@types/jest": "^29.0.0",
         "@types/node": "^18.7.15",
         "@typescript-eslint/eslint-plugin": "^5.36.2",
         "@typescript-eslint/parser": "^5.36.2",
@@ -32,7 +37,9 @@
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-prettier": "^4.2.1",
         "husky": "^8.0.1",
+        "jest": "^28.1.3",
         "prettier": "^2.7.1",
+        "ts-jest": "^28.0.8",
         "typescript": "^4.8.2"
     }
 }
