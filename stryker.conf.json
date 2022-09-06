@@ -1,0 +1,20 @@
+{
+    "testRunner": "jest",
+    "packageManager": "npm",
+    "coverageAnalysis": "all",
+    "checkers": ["typescript"],
+    "allowConsoleColors": true,
+    "tempDirName": ".stryker-tmp",
+    "tsconfigFile": "tsconfig.json",
+    "reporters": ["progress", "clear-text", "html"],
+    "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+    "mutate": ["src/**/*", "!src/index.ts", "!src/**/*.test.ts", "!src/**/types/**", "!src/**/fixtures/**"],
+    "commandRunner": {
+        "command": "npm test"
+    },
+    "jest": {
+        "projectType": "custom",
+        "enableFindRelatedTests": true,
+        "configFile": "./jest.config.json"
+    }
+}
