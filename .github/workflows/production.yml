@@ -6,7 +6,7 @@ on:
       - release
 
 jobs:
-  build:
+  setup:
     runs-on: ubuntu-latest
 
     strategy:
@@ -38,6 +38,49 @@ jobs:
 
       - name: Install dependencies
         run: npm install --legacy-peer-deps --registry=https://registry.npmjs.org/
+
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version:
+          - 18
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          always-auth: true
+          scope: '@rango-team'
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://npm.pkg.github.com/
+
+      - name: Test
+        run: npm run test
+
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version:
+          - 18
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          always-auth: true
+          scope: '@rango-team'
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://npm.pkg.github.com/
 
       - name: Build
         run: npm run build --if-present
