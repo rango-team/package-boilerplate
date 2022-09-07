@@ -7,6 +7,7 @@ on:
 
 jobs:
   setup:
+    name: Setup
     runs-on: ubuntu-latest
 
     strategy:
@@ -39,7 +40,15 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps --registry=https://registry.npmjs.org/
 
+      - name: Cache the artifact
+        uses: actions/cache@v3.0.8
+        id: all
+        with:
+          path: ./*
+          key: ${{ github.sha }}
+
   test:
+    name: Test
     needs: setup
     runs-on: ubuntu-latest
 
@@ -59,6 +68,13 @@ jobs:
           scope: '@rango-team'
           node-version: ${{ matrix.node-version }}
           registry-url: https://npm.pkg.github.com/
+
+      - name: Restore the cached files
+        uses: actions/cache@v3.0.8
+        id: all
+        with:
+          path: ./*
+          key: ${{ github.sha }}
 
       - name: Test
         run: npm run test
