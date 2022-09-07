@@ -3,7 +3,7 @@ name: Developer
 on:
   push:
     branches:
-      - '**'
+      - '!release'
 
 jobs:
   setup:
