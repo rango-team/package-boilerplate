@@ -6,7 +6,8 @@ on:
       - release
 
 jobs:
-  build:
+  setup:
+    name: Setup
     runs-on: ubuntu-latest
 
     strategy:
@@ -39,10 +40,47 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps --registry=https://registry.npmjs.org/
 
+      - name: Cache the artifact
+        uses: actions/cache@v3.0.8
+        id: all
+        with:
+          path: ./*
+          key: ${{ github.sha }}
+
+  build:
+    name: Build
+    needs: setup
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version:
+          - 18
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          always-auth: true
+          scope: '@rango-team'
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://npm.pkg.github.com/
+
+      - name: Restore the cached files
+        uses: actions/cache@v3.0.8
+        id: all
+        with:
+          path: ./*
+          key: ${{ github.sha }}
+
       - name: Build
         run: npm run build --if-present
 
   deploy:
+    name: Deploy
     needs: build
     runs-on: ubuntu-latest
 
@@ -62,6 +100,13 @@ jobs:
           scope: '@rango-team'
           node-version: ${{ matrix.node-version }}
           registry-url: https://npm.pkg.github.com/
+
+      - name: Restore the cached files
+        uses: actions/cache@v3.0.8
+        id: all
+        with:
+          path: ./*
+          key: ${{ github.sha }}
 
       - name: Publish package
         run: npm publish
