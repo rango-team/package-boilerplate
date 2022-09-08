@@ -24,12 +24,15 @@ You will find a clean project to evolve as you want with basic libs, recommended
 ### ⚙ First-class Support
 
 [![Visual Studio Code][vscode]][vscode-url]
+![ECMAScript][ecmascript]
 [![NPM][npm]][npm-url]
 
 ### 💾 Technologies
 
 [![TypeScript][typescript]][typescript-url]
 [![Node.js][node.js]][node-url]
+[![Jest][jest]][jest-url]
+[![Stryker Mutator][stryker]][stryker-url]
 
 ### 📋 Pre-requisites
 
@@ -58,7 +61,7 @@ I strongly recommend you to install them, cause this boilerplate was thought to 
 The project only has developer dependencies, to install them run:
 
 ```bash
-yarn install
+npm install
 ```
 
 ##### 3 - Build
@@ -66,10 +69,30 @@ yarn install
 To build the project you will need to run
 
 ```bash
-yarn build
+npm build
 ```
 
 It will remove the existent `dist` folder and create another one with updated code.
+
+---
+
+#### 📋 Run tests
+
+##### 1 - Jest
+
+To execute the tests you will need to run
+
+```bash
+npm test
+```
+
+##### 2 - Stryker Mutator
+
+To execute the mutation test you will need to run
+
+```bash
+npm run mutation
+```
 
 ## 🔖 Features
 
@@ -80,6 +103,8 @@ It will remove the existent `dist` folder and create another one with updated co
 -   [x] Github Actions
 -   [x] Editor Config
 -   [x] VS code workspace
+-   [x] Jest
+-   [x] Stryker Mutator
 
 ## 📑 License
 
@@ -107,6 +132,10 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [typescript]: https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white
 [typescript-url]: https://www.typescriptlang.org/
 
+<!-- BADGE - ECMAScript -->
+
+[ecmascript]: https://img.shields.io/badge/ecmascript%202022-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
+
 <!-- BADGE - Node.js -->
 
 [node.js]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
@@ -118,10 +147,20 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 [npm]: https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white
 [npm-url]: https://www.npmjs.com/
-[npm-version]: https://shields.io/badge/yarn->=7.20-%23000000?logo=npm&style=for-the-badge&logoColor=white
+[npm-version]: https://shields.io/badge/npm->=7.20-%23000000?logo=npm&style=for-the-badge&logoColor=white
 [npm-installation]: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
 <!-- BADGE - VS Code -->
 
 [vscode]: https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white
 [vscode-url]: https://code.visualstudio.com/
+
+<!-- BADGE - Jest -->
+
+[jest]: https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white
+[jest-url]: https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white
+
+<!-- BADGE - Stryker Mutator -->
+
+[stryker]: https://img.shields.io/badge/-stryker%20mutator-FF4500?style=for-the-badge&logo=testcafe&logoColor=white
+[stryker-url]: https://stryker-mutator.io/
