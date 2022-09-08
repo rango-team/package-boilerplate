@@ -16,16 +16,15 @@
         "url": "https://github.com/rango-team/package-boilerplate"
     },
     "scripts": {
-        "prepare": "npm install husky",
+        "prepare": "husky install",
         "build": "rm -rf dist && tsc -p .",
         "format": "prettier src --write .",
         "check-lint": "eslint src --ext ts",
         "check-types": "tsc --pretty --noEmit",
-        "check-format": "prettier src --check .",
-        "clean": "rm -rf node_modules && npm install"
+        "check-format": "prettier src --check ."
     },
     "devDependencies": {
-        "@types/node": "^18.7.15",
+        "@types/node": "^18.7.16",
         "@typescript-eslint/eslint-plugin": "^5.36.2",
         "@typescript-eslint/parser": "^5.36.2",
         "eslint": "^8.23.0",
