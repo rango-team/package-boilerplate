@@ -79,6 +79,13 @@ jobs:
       - name: Test
         run: npm run test
 
+      - name: Cache the artifact
+        uses: actions/cache@v3.0.8
+        id: all
+        with:
+          path: ./*
+          key: ${{ github.sha }}
+
   build:
     name: Build
     needs: test
@@ -110,6 +117,13 @@ jobs:
 
       - name: Build
         run: npm run build --if-present
+
+      - name: Cache the artifact
+        uses: actions/cache@v3.0.8
+        id: all
+        with:
+          path: ./*
+          key: ${{ github.sha }}
 
   deploy:
     name: Deploy
