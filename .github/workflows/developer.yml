@@ -2,8 +2,8 @@ name: Developer
 
 on:
   push:
-    branches:
-      - "!release"
+    branches-ignore:
+      - release
 
 jobs:
   setup:
