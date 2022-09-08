@@ -16,6 +16,7 @@
         "url": "https://github.com/rango-team/package-boilerplate"
     },
     "scripts": {
+        "mutate": "stryker run",
         "prepare": "husky install",
         "build": "rm -rf dist && tsc -p .",
         "format": "prettier src --write .",
