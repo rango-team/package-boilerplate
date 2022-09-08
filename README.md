@@ -114,18 +114,18 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- BADGE - Contributors -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/rango-team/package-boilerplate.svg?style=for-the-badge
+[contributors-url]: https://github.com/rango-team/package-boilerplate/graphs/contributors
 
 <!-- BADGE - Issues -->
 
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[issues-shield]: https://img.shields.io/github/issues/rango-team/package-boilerplate.svg?style=for-the-badge
+[issues-url]: https://github.com/rango-team/package-boilerplate/issues
 
 <!-- BADGE - License -->
 
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[license-shield]: https://img.shields.io/github/license/rango-team/package-boilerplate.svg?style=for-the-badge
+[license-url]: https://github.com/rango-team/package-boilerplate/blob/v0.0.2/LICENSE
 
 <!-- BADGE - TypeScript -->
 
