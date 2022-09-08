@@ -37,18 +37,21 @@ jobs:
       - name: Override "prepare" script
         run: npm set-script prepare ""
 
+      - name: Generate package lock
+        run: npm i --package-lock-only
+
       - name: Install dependencies
-        run: npm install --legacy-peer-deps --registry=https://registry.npmjs.org/
+        run: npm ci --registry=https://registry.npmjs.org/
 
       - name: Cache the artifact
         uses: actions/cache@v3.0.8
-        id: all
+        id: setup
         with:
           path: ./*
           key: ${{ github.sha }}
 
-  test:
-    name: Test
+  code-health:
+    name: Check code health
     needs: setup
     runs-on: ubuntu-latest
 
@@ -71,20 +74,51 @@ jobs:
 
       - name: Restore the cached files
         uses: actions/cache@v3.0.8
-        id: all
+        id: setup
+        with:
+          path: ./*
+          key: ${{ github.sha }}
+
+      - name: Check lint
+        run: npm run check-lint
+
+      - name: Check types
+        run: npm run check-types
+
+      - name: Check format
+        run: npm run check-format
+
+  test:
+    name: Test
+    needs: code-health
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version:
+          - 18
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          always-auth: true
+          scope: '@rango-team'
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://npm.pkg.github.com/
+
+      - name: Restore the cached files
+        uses: actions/cache@v3.0.8
+        id: setup
         with:
           path: ./*
           key: ${{ github.sha }}
 
       - name: Test
         run: npm run test
-
-      - name: Cache the artifact
-        uses: actions/cache@v3.0.8
-        id: all
-        with:
-          path: ./*
-          key: ${{ github.sha }}
 
   build:
     name: Build
@@ -110,20 +144,13 @@ jobs:
 
       - name: Restore the cached files
         uses: actions/cache@v3.0.8
-        id: all
+        id: setup
         with:
           path: ./*
           key: ${{ github.sha }}
 
       - name: Build
         run: npm run build --if-present
-
-      - name: Cache the artifact
-        uses: actions/cache@v3.0.8
-        id: all
-        with:
-          path: ./*
-          key: ${{ github.sha }}
 
   deploy:
     name: Deploy
@@ -149,7 +176,7 @@ jobs:
 
       - name: Restore the cached files
         uses: actions/cache@v3.0.8
-        id: all
+        id: setup
         with:
           path: ./*
           key: ${{ github.sha }}
